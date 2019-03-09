@@ -144,9 +144,11 @@ static int __init test_m_module_init(void){
 		printk(KERN_INFO "ipq_mdio reg2 = 0x%x\n", readl(mdio_base + MDIO_CTRL_2_REG));
 		printk(KERN_INFO "ipq_mdio reg3 = 0x%x\n", readl(mdio_base + MDIO_CTRL_3_REG));
 		printk(KERN_INFO "ipq_mdio reg3 = 0x%x\n", readl(mdio_base + MDIO_CTRL_4_REG));
-		phy_data = qca8075_phy_reg_read(0x0, 0x1C, QCA8075_PHY_ID1);
+		//phy_data = qca8075_phy_reg_read(0x0, 0x1C, QCA8075_PHY_ID1);
+		phy_data = qca8075_phy_reg_read(0x0, 0x00, QCA8075_PHY_ID1);
 		printk(KERN_INFO "PHY ID1: 0x%x\n", phy_data);
-		phy_data = qca8075_phy_reg_read(0x0, 0x1C, QCA8075_PHY_ID2);
+		//phy_data = qca8075_phy_reg_read(0x0, 0x1C, QCA8075_PHY_ID2);
+		phy_data = qca8075_phy_reg_read(0x0, 0x00, QCA8075_PHY_ID2);
 		printk(KERN_INFO "PHY ID2: 0x%x\n", phy_data);
 		iounmap(mdio_base);
 		return -ENOMEM;
